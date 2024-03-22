@@ -57,14 +57,15 @@ namespace ChamadosTecnicosTec55.Adicionar
 
                     // Chama o DAO para incluir o cliente
                     clientedao.IncluiCliente(cliente);
+
+                    MessageBox.Show("Cadastrado com Sucesso!");
+
+                    this.Close();
+
                 }
                 catch(Exception ex) 
                 {
                     MessageBox.Show("Erro ao Cadastrar", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally 
-                {
-                    MessageBox.Show("Cadastrado com Sucesso!");
                 }
             }
         }
