@@ -61,6 +61,12 @@
     <Compile Include="Adicionar\frm_AdicionarTecnico.Designer.cs">
       <DependentUpon>frm_AdicionarTecnico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alterar\frm_GerirClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alterar\frm_GerirClientes.Designer.cs">
+      <DependentUpon>frm_GerirClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Adicionar\frm_AdicionarTecnico.resx">
       <DependentUpon>frm_AdicionarTecnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alterar\frm_GerirClientes.resx">
+      <DependentUpon>frm_GerirClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Principal.resx">
       <DependentUpon>frm_Principal.cs</DependentUpon>

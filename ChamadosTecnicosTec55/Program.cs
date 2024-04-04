@@ -1,4 +1,5 @@
 ﻿using ChamadosTecnicosTec55.Adicionar;
+using ChamadosTecnicosTec55.Alterar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace ChamadosTecnicosTec55
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_AdicionarTecnico());
+            Application.Run(new frm_Principal());
         }
     }
 }

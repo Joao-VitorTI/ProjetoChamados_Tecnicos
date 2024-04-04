@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Principal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +53,7 @@
             this.documentaçãoToolStripMenuItem,
             this.sobreToolStripMenuItem,
             this.fecharSoluçãoToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -73,6 +75,7 @@
             this.clienteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
+            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // técnicoToolStripMenuItem
             // 
@@ -80,6 +83,7 @@
             this.técnicoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T)));
             this.técnicoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.técnicoToolStripMenuItem.Text = "Técnico";
+            this.técnicoToolStripMenuItem.Click += new System.EventHandler(this.técnicoToolStripMenuItem_Click);
             // 
             // gestorDeChamadosToolStripMenuItem
             // 
@@ -90,14 +94,16 @@
             // gestorToolStripMenuItem
             // 
             this.gestorToolStripMenuItem.Name = "gestorToolStripMenuItem";
-            this.gestorToolStripMenuItem.Size = new System.Drawing.Size(129, 20);
-            this.gestorToolStripMenuItem.Text = "Gestor de Chamados";
+            this.gestorToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
+            this.gestorToolStripMenuItem.Text = "Gestor de Clientes";
+            this.gestorToolStripMenuItem.Click += new System.EventHandler(this.gestorToolStripMenuItem_Click);
             // 
             // calculadoraToolStripMenuItem
             // 
             this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
             this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.calculadoraToolStripMenuItem.Text = "Calculadora";
+            this.calculadoraToolStripMenuItem.Click += new System.EventHandler(this.calculadoraToolStripMenuItem_Click);
             // 
             // documentaçãoToolStripMenuItem
             // 
@@ -125,6 +131,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frm_Principal";
             this.Text = "frm_Principal";
