@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_GerirClientes));
             this.txb_Buscar = new System.Windows.Forms.TextBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.dgv_GerirClientes = new System.Windows.Forms.DataGridView();
@@ -35,6 +36,7 @@
             this.btn_Alterar = new System.Windows.Forms.Button();
             this.btn_Excluir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_Reiniciar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_GerirClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +58,7 @@
             this.btn_Buscar.TabIndex = 1;
             this.btn_Buscar.Text = "&Buscar";
             this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // dgv_GerirClientes
             // 
@@ -113,11 +116,24 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Gerir Cliente";
             // 
+            // btn_Reiniciar
+            // 
+            this.btn_Reiniciar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Reiniciar.Location = new System.Drawing.Point(21, 404);
+            this.btn_Reiniciar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_Reiniciar.Name = "btn_Reiniciar";
+            this.btn_Reiniciar.Size = new System.Drawing.Size(109, 42);
+            this.btn_Reiniciar.TabIndex = 7;
+            this.btn_Reiniciar.Text = "&Reiniciar";
+            this.btn_Reiniciar.UseVisualStyleBackColor = true;
+            this.btn_Reiniciar.Click += new System.EventHandler(this.btn_Reiniciar_Click);
+            // 
             // frm_GerirClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 466);
+            this.Controls.Add(this.btn_Reiniciar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Excluir);
             this.Controls.Add(this.btn_Alterar);
@@ -126,6 +142,7 @@
             this.Controls.Add(this.btn_Buscar);
             this.Controls.Add(this.txb_Buscar);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frm_GerirClientes";
             this.Text = "frm_GerirClientes";
@@ -145,5 +162,6 @@
         private System.Windows.Forms.Button btn_Alterar;
         private System.Windows.Forms.Button btn_Excluir;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_Reiniciar;
     }
 }

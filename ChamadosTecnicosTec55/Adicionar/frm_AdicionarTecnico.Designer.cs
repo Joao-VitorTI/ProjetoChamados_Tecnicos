@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_AdicionarTecnico));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txb_Nome = new System.Windows.Forms.TextBox();
@@ -173,6 +174,7 @@
             this.Controls.Add(this.txb_Nome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_AdicionarTecnico";
             this.Text = "frm_AdicionarTecnico";
             this.ResumeLayout(false);
