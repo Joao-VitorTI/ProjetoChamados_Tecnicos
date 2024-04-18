@@ -41,5 +41,31 @@ namespace ChamadosTecnicosTec55.Alterar
 
             }
         }
+
+        private void btn_Ok_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            ClienteDao clientedao = new ClienteDao(_conexao);
+
+            try
+            {
+                cliente.Nome = txb_AltNome.Text;
+                cliente.Profissao = txb_AltProfissao.Text;
+                cliente.Setor = txb_AltSetor.Text;
+                cliente.Obs = txb_AltObs.Text;
+
+                int codigo = Convert.ToInt32(txb_AltCodigo.Text);
+
+                cliente.CodigoCliente = codigo;
+
+                clientedao.AlterarCliente(cliente);
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
