@@ -75,7 +75,25 @@ namespace ChamadosTecnicosTec55.Alterar
 
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
+            // Botão Excluir 
+            // Selecionar Data Grid, Capturar ID, Enviar para o DAO, excluir
+            if(dgv_GerirClientes.SelectedRows.Count > 0)
+            {
+                int codigo = Convert.ToInt32(dgv_GerirClientes.CurrentRow.Cells[0].Value);
 
+                var resultado = MessageBox.Show("Deseja Excluir ?", "Pergunta",MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button2);
+
+                if(resultado == DialogResult.Yes)
+                {
+                    ClienteDao clientedao = new ClienteDao(_conexao);
+                    clientedao.ExcluiCliente(codigo);
+                    ListarCliente();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nenhum registro selecionado!!","Atenção!",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)

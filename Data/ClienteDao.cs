@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data; //ADO.net
-using System.Data.SqlClient; //ADO para SQL SERVER
+using System.Data.SqlClient;
+using System.Runtime.InteropServices; //ADO para SQL SERVER
 
 namespace Data
 {
@@ -131,6 +132,26 @@ namespace Data
             catch(Exception ex)
             {
                 throw new Exception($"Erro{ex}");
+            }
+        }
+
+        public void ExcluiCliente(int codigoCliente)
+        {
+            const string query = @"delete from clientes where codigocliente = @codigoCliente";
+
+            try
+            {
+                using(var conexaoBd = new SqlConnection(_conexao))
+                using(var comando = new SqlCommand(query, conexaoBd))
+                {
+                    comando.Parameters.AddWithValue("@codigoCliente", codigoCliente);
+                    conexaoBd.Open();
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao Excluir{ex.Message}", ex);
             }
         }
     }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data; //ADO.NET
+using System.Runtime.InteropServices;
 
 namespace Data
 {
@@ -46,6 +47,30 @@ namespace Data
                 }
             }
         }
+
+        public DataSet BuscaTecnico(string pesquisa = "")
+        {
+            const string query = "Select * from Tecnicos Where Nome like @pesquisa";
+
+            try
+            {
+                using (var conexaoBd = new SqlConnection(_conexao))
+                using (var comando = new SqlCommand(query, conexaoBd))
+                using (var adaptador = new SqlDataAdapter(comando))
+                {
+                    string parametroPesquisa = $"%{pesquisa}%";
+                    comando.Parameters.AddWithValue("@pesquisa", parametroPesquisa);
+                    conexaoBd.Open();
+                    var dsTecnicos = new DataSet();
+                    adaptador.Fill(dsTecnicos, "Tecnicos");
+                    return dsTecnicos;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao buscar Tecnicos: {ex.Message}");
+            }
+        }//parei aqui...
 
     }
 }

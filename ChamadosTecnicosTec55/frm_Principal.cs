@@ -68,5 +68,12 @@ namespace ChamadosTecnicosTec55
             gestorcliente.MdiParent = this;
             gestorcliente.Show();
         }
+
+        private void gestorDeTecnicosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var gestortecnico = new frm_GerirTecnico();
+            gestortecnico.MdiParent = this;
+            gestortecnico.Show();
+        }
     }
 }
