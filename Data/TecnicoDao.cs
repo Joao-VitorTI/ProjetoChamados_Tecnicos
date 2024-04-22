@@ -70,7 +70,89 @@ namespace Data
             {
                 throw new Exception($"Erro ao buscar Tecnicos: {ex.Message}");
             }
-        }//parei aqui...
+        }
+
+        public Tecnico ObtemTecnico(int codigoTecnico)
+        {
+            const string query = @"select * from Tecnicos where CodigoTecnico = @CodigoTecnico";
+            Tecnico tecnico = null;
+
+            try
+            {
+                using (var conexaoBd = new SqlConnection(_conexao))
+                using (var comando = new SqlCommand(query, conexaoBd))
+                {
+                    comando.Parameters.AddWithValue("@CodigoTecnico", codigoTecnico);
+                    conexaoBd.Open();
+                    using(var reader = comando.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            tecnico = new Tecnico
+                            {
+                                CodigoTecnico = Convert.ToInt32(reader["CodigoTecnico"]),
+                                Nome = reader["Nome"].ToString(),
+                                Especialidade = reader["Especialidade"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                Senha = reader["Senha"].ToString(),
+                                Obs = reader["Obs"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao obter técnico", ex);
+            }
+            return tecnico;
+        }
+
+        public void AlterarTecnico(Tecnico tecnico)
+        {
+            const string query = @"update Tecnicos set  Nome = @Nome, Especialidade = @Especialidade, Email = @Email, Senha = @Senha, Obs = @Obs where CodigoTecnico = @CodigoTecnico;";
+
+            try
+            {
+                using (var conexaoBd = new SqlConnection(_conexao))
+                using (var comando = new SqlCommand(query, conexaoBd))
+                {
+                    comando.Parameters.AddWithValue("@CodigoTecnico", tecnico.CodigoTecnico);
+                    comando.Parameters.AddWithValue("@Nome", tecnico.Nome);
+                    comando.Parameters.AddWithValue("@Especialidade", tecnico.Especialidade);
+                    comando.Parameters.AddWithValue("@Email", tecnico.Email);
+                    comando.Parameters.AddWithValue("@Senha", tecnico.Senha);
+                    comando.Parameters.AddWithValue("@Obs", tecnico.Obs);
+
+                    conexaoBd.Open();
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro {ex}");
+            }
+        }
+
+        public void ExcluiTecnico(int codigoTecnico)
+        {
+            const string query = @"delete from Tecnicos Where CodigoTecnico = @CodigoTecnico";
+
+            try
+            {
+                using (var conexaoBd = new SqlConnection(_conexao))
+                using (var comando = new SqlCommand(query, conexaoBd))
+                {
+                    comando.Parameters.AddWithValue("@CodigoTecnico", codigoTecnico);
+                    conexaoBd.Open();
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch(Exception ex) 
+            {
+                throw new Exception($"Erro ao Excluir Tecnico{ex.Message}", ex);
+            }
+        }
 
     }
 }

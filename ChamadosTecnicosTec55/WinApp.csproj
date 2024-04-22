@@ -67,6 +67,12 @@
     <Compile Include="Alterar\frm_AlteraCliente.Designer.cs">
       <DependentUpon>frm_AlteraCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alterar\frm_AlteraTecnico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alterar\frm_AlteraTecnico.Designer.cs">
+      <DependentUpon>frm_AlteraTecnico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Alterar\frm_GerirClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alterar\frm_AlteraCliente.resx">
       <DependentUpon>frm_AlteraCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alterar\frm_AlteraTecnico.resx">
+      <DependentUpon>frm_AlteraTecnico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Alterar\frm_GerirClientes.resx">
       <DependentUpon>frm_GerirClientes.cs</DependentUpon>

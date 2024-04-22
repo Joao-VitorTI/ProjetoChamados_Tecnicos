@@ -49,6 +49,7 @@
             this.btn_Reiniciar.TabIndex = 15;
             this.btn_Reiniciar.Text = "&Reiniciar";
             this.btn_Reiniciar.UseVisualStyleBackColor = true;
+            this.btn_Reiniciar.Click += new System.EventHandler(this.btn_Reiniciar_Click);
             // 
             // label1
             // 
@@ -71,6 +72,7 @@
             this.btn_Excluir.TabIndex = 13;
             this.btn_Excluir.Text = "&Excluir Técnico";
             this.btn_Excluir.UseVisualStyleBackColor = true;
+            this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
             // 
             // btn_Alterar
             // 
@@ -82,6 +84,7 @@
             this.btn_Alterar.TabIndex = 12;
             this.btn_Alterar.Text = "&Alterar Técnico";
             this.btn_Alterar.UseVisualStyleBackColor = true;
+            this.btn_Alterar.Click += new System.EventHandler(this.btn_Alterar_Click);
             // 
             // btn_Incluir
             // 
@@ -117,6 +120,7 @@
             this.btn_Buscar.TabIndex = 9;
             this.btn_Buscar.Text = "&Buscar";
             this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // txb_Buscar
             // 
@@ -141,6 +145,7 @@
             this.Controls.Add(this.txb_Buscar);
             this.Name = "frm_GerirTecnico";
             this.Text = "frm_GerirTecnico";
+            this.Load += new System.EventHandler(this.frm_GerirTecnico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_GerirTecnicos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
